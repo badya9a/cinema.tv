@@ -1,0 +1,16 @@
+@import '../../../assets/styles/variables';
+
+.banner {
+	@apply relative overflow-hidden w-full h-80 sm:h-56 rounded-layout sm:rounded-none shadow-lg flex flex-col justify-end;
+
+	@include fade-bg-gradient();
+}
+@media (max-width: 768px) {
+	.banner {
+		position: relative;
+		width: 100vw;
+		img {
+			object-fit: cover;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.sidebar {
+	@apply p-layout;
+}
+
+@media (max-width: 768px) {
+	.sidebar {
+		@apply hidden;
+	}
+}

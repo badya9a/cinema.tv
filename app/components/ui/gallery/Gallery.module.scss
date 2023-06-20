@@ -1,0 +1,64 @@
+@import '../../../assets/styles/variables';
+
+.gallery {
+	@apply flex items-center overflow-x-auto flex-nowrap py-3 ml-3;
+	-webkit-overflow-scrolling: touch;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.item {
+	@apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
+	flex: 0 0 auto;
+
+	&:hover {
+		transform: translateY(-5px);
+	}
+
+	&.vertical {
+		@apply mr-4 sm:mr-3 last:mr-0 w-1/5 h-72;
+		max-width: 200px;
+	}
+
+	&.horizontal {
+		@apply mb-8 h-44 sm:h-56;
+		width: 30%;
+	}
+
+	&.withText {
+		@include fade-bg-gradient(0deg);
+		&::before {
+			@apply rounded-layout sm:hidden;
+		}
+	}
+
+	img {
+		@apply image-like-bg sm:object-cover;
+	}
+
+	.content {
+		@apply relative z-2 text-center m-3 w-full;
+
+		.title {
+			@apply font-semibold mb-1 text-white text-shadow;
+		}
+
+		.subTitle {
+			@apply text-gray-500 text-shadow;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.item {
+		&.vertical {
+			@apply h-56 w-2/6;
+			max-width: 150px;
+		}
+		&.horizontal {
+			width: 40%;
+		}
+	}
+}

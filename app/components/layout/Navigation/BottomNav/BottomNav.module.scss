@@ -1,0 +1,44 @@
+.wrapper {
+	@apply hidden sm:block;
+}
+
+.container {
+	@apply hidden sm:block text-white fixed bottom-0 z-10;
+	opacity: 96%;
+	background-color: rgb(49, 49, 89);
+	height: 48px;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	> li {
+		@apply hidden sm:block;
+		list-style: none;
+		width: 20%;
+		display: flex;
+		justify-content: center;
+		> a {
+			font-size: 12px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			> svg {
+				width: 22px;
+				height: 20px;
+			}
+		}
+		&.active {
+			@apply border-r-primary;
+
+			> Link > span {
+				@apply text-white;
+			}
+
+			> a > svg {
+				@apply fill-primary;
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+.form {
+	@apply w-1/2 mt-12 sm:flex sm:flex-col sm:items-center sm:justify-center sm:w-full sm:p-5;
+
+	> button {
+		@apply mt-5 sm:w-full;
+	}
+}

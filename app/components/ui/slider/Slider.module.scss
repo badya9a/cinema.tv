@@ -1,0 +1,31 @@
+@import '../../../assets/styles/_variables';
+.slider {
+	@apply relative mx-auto;
+	max-width: 1200px;
+
+	.slide {
+		@apply relative h-80 sm:h-56 rounded-3xl sm:rounded-none overflow-hidden shadow-xl flex items-end;
+
+		@include fade-bg-gradient();
+
+		.image {
+			@apply image-like-bg;
+		}
+
+		.content {
+			@apply relative z-2 p-8 sm:p-6;
+
+			.heading {
+				@apply text-white uppercase text-5xl sm:text-xl font-semibold mb-1 text-shadow;
+			}
+
+			.subHeading {
+				@apply text-gray-300 font-medium sm:font-normal uppercase mb-4 text-shadow sm:text-sm;
+			}
+
+			.button {
+				@apply btn-primary py-2 px-10 sm:px-7 sm:py-1.5;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+.list {
+	@apply flex text-center overflow-x-auto flex-nowrap py-3 ml-3;
+	-webkit-overflow-scrolling: touch;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}

@@ -1,0 +1,30 @@
+.wrapper {
+	@apply w-full z-10 hidden sm:block fixed top-0;
+	opacity: 95%;
+	height: 60px;
+
+	> .container {
+		@apply flex w-full items-center;
+		background-color: rgb(49, 49, 89);
+	}
+
+	svg {
+		fill: white;
+		height: 27px;
+		width: 27px;
+	}
+}
+
+@keyframes slide-in {
+	0% {
+		right: -300px;
+	}
+	100% {
+		right: 0;
+	}
+}
+
+.search {
+	@apply relative flex;
+	animation: slide-in 0.3s linear;
+}

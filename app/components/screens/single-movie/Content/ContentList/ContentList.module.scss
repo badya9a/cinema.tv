@@ -1,0 +1,29 @@
+.list {
+	@apply flex items-center mb-1;
+
+	> .name {
+		@apply mr-2 text-white text-opacity-60 sm:hidden;
+	}
+
+	> .links {
+		@apply text-white text-opacity-90;
+		:first-child {
+			margin-left: 0;
+		}
+		> a {
+			@apply text-link ml-1 no-underline;
+			&.mobile {
+				color: #2896a0;
+			}
+		}
+		&.mobile {
+			color: #20bcc6;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.links {
+		font-size: 20px;
+	}
+}

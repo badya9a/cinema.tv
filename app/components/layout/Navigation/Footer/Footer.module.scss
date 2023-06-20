@@ -1,0 +1,62 @@
+.footer {
+	@apply hidden sm:block;
+	background-color: black;
+	margin-bottom: 49px;
+	padding: 30px 15px 0 15px;
+
+	.footer__links_wrapper {
+		padding-right: 30px;
+	}
+
+	.title {
+		@apply flex items-center justify-between text-white;
+		padding: 5px 0;
+		border-bottom: 1px solid gray;
+		margin: 20px 0 12px;
+		font-weight: 700;
+
+		&.active {
+			color: rgba(0, 200, 255, 0.896);
+		}
+	}
+
+	.links {
+		@apply flex flex-col text-gray-600;
+		max-height: 0;
+		overflow: hidden;
+
+		&.active {
+			max-height: 100%;
+		}
+
+		> .link {
+			margin: 2px 0;
+		}
+	}
+
+	.socialMedia {
+		width: 100%;
+		margin-bottom: 15px;
+		margin-top: 30px;
+	}
+
+	.socialMediaLinks {
+		@apply flex;
+
+		> .social__media_icon {
+			@apply flex items-center justify-center;
+			margin-top: 5px;
+			border-radius: 50%;
+			color: white;
+			margin-right: 8px;
+			background-color: rgb(49, 49, 89);
+			width: 40px;
+			height: 40px;
+
+			> svg {
+				height: 30px;
+				width: 30px;
+			}
+		}
+	}
+}

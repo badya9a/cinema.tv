@@ -1,0 +1,10 @@
+.bar {
+	@apply flex fixed z-30 top-0 left-0 justify-between items-center;
+	background-color: rgb(31, 28, 28);
+	width: 100vw;
+	height: 51px;
+
+	> button {
+		@apply flex mx-4 text-white font-medium;
+	}
+}
