@@ -14,7 +14,7 @@ const BottomNav = () => {
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
 				{links.map((link) => (
-					<MenuItem item={link} />
+					<MenuItem item={link} key={link.title} />
 				))}
 				{user && (
 					<MenuItem

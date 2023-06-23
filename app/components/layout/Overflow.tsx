@@ -23,43 +23,45 @@ const Overflow: FC<{
 						{link.title}
 					</Link>
 				))}
-				{user && user.isAdmin ? (
-					<>
-						<Link
-							href={'/favorites'}
-							onClick={() => setToggleActive(!toggleActive)}
-						>
-							Favorite
-						</Link>
-						<Link
-							href={'/profile'}
-							onClick={() => setToggleActive(!toggleActive)}
-						>
-							Profile
-						</Link>
-						<Link
-							href={'/manage'}
-							onClick={() => setToggleActive(!toggleActive)}
-						>
-							Admin panel
-						</Link>
-					</>
-				) : (
-					<>
-						<Link
-							href={'/favorites'}
-							onClick={() => setToggleActive(!toggleActive)}
-						>
-							Favorite
-						</Link>
-						<Link
-							href={'/profile'}
-							onClick={() => setToggleActive(!toggleActive)}
-						>
-							Profile
-						</Link>
-					</>
-				)}
+				{user ? (
+					user.isAdmin ? (
+						<>
+							<Link
+								href={'/favorites'}
+								onClick={() => setToggleActive(!toggleActive)}
+							>
+								Favorite
+							</Link>
+							<Link
+								href={'/profile'}
+								onClick={() => setToggleActive(!toggleActive)}
+							>
+								Profile
+							</Link>
+							<Link
+								href={'/manage'}
+								onClick={() => setToggleActive(!toggleActive)}
+							>
+								Admin panel
+							</Link>
+						</>
+					) : (
+						<>
+							<Link
+								href={'/favorites'}
+								onClick={() => setToggleActive(!toggleActive)}
+							>
+								Favorite
+							</Link>
+							<Link
+								href={'/profile'}
+								onClick={() => setToggleActive(!toggleActive)}
+							>
+								Profile
+							</Link>
+						</>
+					)
+				) : null}
 			</div>
 
 			<button className={styles.button}>Try for free</button>

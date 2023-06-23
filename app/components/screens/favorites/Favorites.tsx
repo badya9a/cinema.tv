@@ -34,6 +34,14 @@ const Favorites: FC = () => {
 						<FavoriteItem movie={movie} key={movie._id} />
 					))
 				)}
+
+				{favoriteMovies
+					? favoriteMovies.length < 1 && (
+							<h1 className="text-white text-xl sm:ml-6 ml-0">
+								You haven't add favorite movies yet
+							</h1>
+					  )
+					: 'Error happened'}
 			</section>
 		</Meta>
 	)
