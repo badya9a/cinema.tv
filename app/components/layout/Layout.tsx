@@ -10,10 +10,10 @@ import { links } from './Navigation/BottomNav/links'
 import Footer from './Navigation/Footer/Footer'
 import Navigation from './Navigation/Navigation'
 import PhoneNav from './Navigation/PhoneNavBar/PhoneNav'
+import Overflow from './Overflow'
 import Sidebar from './Sidebar/Sidebar'
 
 const Layout: FC<ILayout> = ({ children }) => {
-	const { user } = useAuth()
 	const [toggleActive, setToggleActive] = useState(false)
 	return (
 		<div className={styles.layout}>
@@ -21,62 +21,17 @@ const Layout: FC<ILayout> = ({ children }) => {
 			<PhoneNav setToggleActive={setToggleActive} toggleActive={toggleActive} />
 			<div className={styles.center}>
 				{toggleActive ? (
-					<div className={styles.container}>
-						<div className={styles.links}>
-							{links.map((link) => (
-								<Link
-									href={link.link}
-									onClick={() => setToggleActive(!toggleActive)}
-								>
-									{link.title}
-								</Link>
-							))}
-							{user && user.isAdmin ? (
-								<>
-									<Link
-										href={'/favorites'}
-										onClick={() => setToggleActive(!toggleActive)}
-									>
-										Favorite
-									</Link>
-									<Link
-										href={'/profile'}
-										onClick={() => setToggleActive(!toggleActive)}
-									>
-										Profile
-									</Link>
-									<Link
-										href={'/manage'}
-										onClick={() => setToggleActive(!toggleActive)}
-									>
-										Admin panel
-									</Link>
-								</>
-							) : (
-								<>
-									<Link
-										href={'/favorites'}
-										onClick={() => setToggleActive(!toggleActive)}
-									>
-										Favorite
-									</Link>
-									<Link
-										href={'/profile'}
-										onClick={() => setToggleActive(!toggleActive)}
-									>
-										Profile
-									</Link>
-								</>
-							)}
-						</div>
-
-						<button className={styles.button}>Try for free</button>
-					</div>
+					<Overflow
+						toggleActive={toggleActive}
+						setToggleActive={setToggleActive}
+					/>
 				) : (
-					<>{children}</>
+					<>
+						{children}
+						<Footer />
+					</>
 				)}
 			</div>
-			<Footer />
 			<BottomNav />
 			<Sidebar />
 		</div>

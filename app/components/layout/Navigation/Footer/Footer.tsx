@@ -23,7 +23,7 @@ const Footer = () => {
 					))}
 				</div>
 			</div>
-			<p className="flex justify-center text-gray-600 text-sm mb-20">
+			<p className="flex justify-center text-gray-600 text-sm pb-3">
 				© CINEMA.TV 2023. All rights reserved.{' '}
 			</p>
 		</footer>

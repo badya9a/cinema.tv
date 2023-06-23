@@ -18,18 +18,16 @@ interface FooterLinkProps {
 }
 
 const FooterLink: FC<FooterLinkProps> = ({ links, sectiontitle }) => {
-	const { pathname } = useRouter()
+	const { reload } = useRouter()
 	useEffect(() => {
 		setToggleActive(false)
-	}, [pathname])
+	}, [reload])
 	const [toggleActive, setToggleActive] = useState(false)
 	return (
 		<div className={styles.footer__links_wrapper}>
 			<p
 				onClick={() => setToggleActive(!toggleActive)}
-				className={cn(styles.title, {
-					[styles.active]: toggleActive,
-				})}
+				className={styles.title}
 			>
 				{sectiontitle}
 				{toggleActive ? (

@@ -3,7 +3,7 @@
 }
 
 .movies {
-	@apply flex flex-wrap mt-8;
+	@apply flex flex-wrap mt-8 sm:mt-0;
 
 	> a {
 		@apply mr-6 sm:mr-0 sm:m-6 animate-fade;

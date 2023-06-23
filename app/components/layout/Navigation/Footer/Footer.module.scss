@@ -1,8 +1,12 @@
 .footer {
 	@apply hidden sm:block;
 	background-color: black;
-	margin-bottom: 49px;
+	margin-bottom: 48px;
 	padding: 30px 15px 0 15px;
+
+	.footer__links {
+		color: white;
+	}
 
 	.footer__links_wrapper {
 		padding-right: 30px;

@@ -1,6 +1,8 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import Image from 'next/image'
 
 import Catalog from '@/components/ui/catalog-movies/Catalog'
+import { ICatalog } from '@/components/ui/catalog-movies/catalog.interface'
 
 import { IActor, IMovie } from '@/shared/types/movie.types'
 
@@ -16,7 +18,17 @@ interface IActorPage {
 
 const ActorPage: NextPage<IActorPage> = ({ actor, movies }) => {
 	return actor ? (
-		<Catalog movies={movies || []} title={actor.name} />
+		<>
+			<div className="flex sm:mt-[80px] sm:ml-6">
+				<Image src={actor.photo} width={105} height={157} alt={actor.name} />
+				<div className="ml-5">
+					<h1 className="text-white text-xl font-semibold">{actor.name}</h1>
+					<p className="text-yellow-700">Actor</p>
+				</div>
+			</div>
+			<p className="text-lg text-white sm:ml-6 mt-10">Films with the actor</p>
+			<Catalog movies={movies || []} title={actor.name} />
+		</>
 	) : (
 		<Error404 />
 	)

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 import MaterialIcon from '@/components/ui/MaterialIcon'
 
@@ -7,7 +8,12 @@ import Search from '../../Sidebar/Search/Search'
 import styles from './PhoneNav.module.scss'
 
 const PhoneSearch = () => {
+	const { reload } = useRouter()
 	const [toggleActive, setToggleActive] = useState(false)
+
+	useEffect(() => {
+		setToggleActive(false)
+	}, [reload])
 
 	return (
 		<div className="flex items-center flex-1 justify-end">
