@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 
 import Layout from '@/components/layout/Layout'
 import { ILayout } from '@/components/layout/Layout.interface'
+import Footer from '@/components/layout/Navigation/Footer/Footer'
 
 import { TypeComponentAuthFields } from '@/shared/types/auth.types'
 
@@ -28,7 +29,16 @@ const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
 				<QueryClientProvider client={queryClient}>
 					<ReduxToast />
 					<AuthProvider Component={Component}>
-						<Layout>{children}</Layout>
+						<Layout>
+							{Component.isOnlyAdmin ? (
+								children
+							) : (
+								<>
+									{children}
+									<Footer />
+								</>
+							)}
+						</Layout>
 					</AuthProvider>
 				</QueryClientProvider>
 			</Provider>

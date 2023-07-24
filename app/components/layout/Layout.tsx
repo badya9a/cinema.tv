@@ -26,10 +26,7 @@ const Layout: FC<ILayout> = ({ children }) => {
 						setToggleActive={setToggleActive}
 					/>
 				) : (
-					<>
-						{children}
-						<Footer />
-					</>
+					<>{children}</>
 				)}
 			</div>
 			<BottomNav />

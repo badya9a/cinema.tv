@@ -1,9 +1,15 @@
+import { useAuth } from '@/hooks/useAuth'
+
 import styles from './Footer.module.scss'
 import FooterLink from './FooterLink'
 import { linksData, socialMediaLinks } from './FooterLinksData'
 import SocialMedia from './SocialMedia'
 
 const Footer = () => {
+	const { user } = useAuth()
+
+	if (!user) return null
+
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footer__links}>
