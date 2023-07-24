@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router'
+
 import { useAuth } from '@/hooks/useAuth'
 
 import styles from './Footer.module.scss'
@@ -6,10 +8,9 @@ import { linksData, socialMediaLinks } from './FooterLinksData'
 import SocialMedia from './SocialMedia'
 
 const Footer = () => {
-	const { user } = useAuth()
+	const { pathname } = useRouter()
 
-	if (!user) return null
-
+	if (pathname === '/auth') return null
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footer__links}>
