@@ -11,11 +11,12 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: 'https://cinematv-96f27fc02fc9.herokuapp.com/api/:path*',
+				destination: 'https://elegant-ruby-cardigan.cyclic.cloud/api/:path*',
 			},
 			{
 				source: '/uploads/:path*',
-				destination: 'http://localhost:3000/public/static/uploads/:path*',
+				destination:
+					'https://cinema-tv-kappa.vercel.app/public/static/uploads/:path*',
 			},
 		]
 	},

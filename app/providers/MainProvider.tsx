@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 
 import Layout from '@/components/layout/Layout'
-import { ILayout } from '@/components/layout/Layout.interface'
 import Footer from '@/components/layout/Navigation/Footer/Footer'
 
 import { TypeComponentAuthFields } from '@/shared/types/auth.types'
