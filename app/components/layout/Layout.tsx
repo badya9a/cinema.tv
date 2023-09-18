@@ -1,13 +1,8 @@
-import Link from 'next/link'
 import { FC, useState } from 'react'
-
-import { useAuth } from '@/hooks/useAuth'
 
 import { ILayout } from './Layout.interface'
 import styles from './Layout.module.scss'
 import BottomNav from './Navigation/BottomNav/BottomNav'
-import { links } from './Navigation/BottomNav/links'
-import Footer from './Navigation/Footer/Footer'
 import Navigation from './Navigation/Navigation'
 import PhoneNav from './Navigation/PhoneNavBar/PhoneNav'
 import Overflow from './Overflow'
